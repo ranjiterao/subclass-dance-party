@@ -2,6 +2,8 @@
 var makeDancer = function(top, left, timeBetweenSteps) {
 
   this.timeBetweenSteps = timeBetweenSteps;
+  this.top = top;
+  this.left = left;
   // use jQuery to create an HTML <span> tag
   this.$node = $('<span class="dancer"><img src="http://res.freestockphotos.biz/pictures/15/15581-illustration-of-a-blue-cartoon-hat-pv.png" width="100"></span>');
 
@@ -32,4 +34,11 @@ makeDancer.prototype.setPosition = function(top, left) {
   this.$node.css(styleSettings);
 };
 
+makeDancer.prototype.lineUp = function(left) {
+  var that = this;
+
+  that.setPosition(200, left);
+  that.left = left;
+  that.top = 200;
+}
 
