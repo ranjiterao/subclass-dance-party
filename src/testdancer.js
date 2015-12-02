@@ -4,7 +4,7 @@ var makeNewDancer = function(top, left, timeBetweenSteps) {
   //calling makeDancer to create a new instance of makeDancer
     //this new instance has all of makeDancer's properties and method delegation
   makeDancer.call(this, top, left, timeBetweenSteps);
-  this.$node = $('<span class="dancer"><img src="http://res.freestockphotos.biz/pictures/15/15581-illustration-of-a-blue-cartoon-hat-pv.png" width="100"></span><div class="dancer"><br><br><br><img src="http://gifdanceparty.giphy.com/dancers_thumbs/8bitcarlton.png" width="100"></div>');
+  this.$node = $('<span class="dancer"><img src="http://content.screencast.com/users/fg-a/folders/world-flags/media/72ef25eb-15be-46fd-b2d5-96196509b6de/indiaC.gif" width="150"></span><div class="dancer"><br><br><br><img src="http://animationsa2z.com/attachments/Image/india/india5.gif" width="100"></div>');
   
   //this.$node = $('<span class="dancer"><img src="http://gifdanceparty.giphy.com/dancers_thumbs/8bitcarlton.png" width="100"></span>');
   this.setPosition(top, left);

@@ -4,8 +4,10 @@ var makeDancer = function(top, left, timeBetweenSteps) {
   this.timeBetweenSteps = timeBetweenSteps;
   this.top = top;
   this.left = left;
+  this.leftEdge = true;
+  this.rightEdge = false;
   // use jQuery to create an HTML <span> tag
-  this.$node = $('<span class="dancer"><img src="http://res.freestockphotos.biz/pictures/15/15581-illustration-of-a-blue-cartoon-hat-pv.png" width="100"></span>');
+  this.$node = $('<span class="dancer"><img src="http://content.screencast.com/users/fg-a/folders/world-flags/media/72ef25eb-15be-46fd-b2d5-96196509b6de/indiaC.gif" width="150"></span>');
 
   this.step();
 
@@ -15,6 +17,23 @@ makeDancer.prototype.step = function() {
   // the basic dancer doesn't do anything interesting at all on each step,
   // it just schedules the next step
   var that = this;
+  if (this.leftEdge === true) {
+    this.left = this.left + 100;
+    this.setPosition(this.top, this.left)
+  }
+  if (this.left <=100 && this.leftEdge === false) {
+    this.leftEdge = true;
+    this.rightEdge = false;
+  } 
+  if (this.left >=1800 && this.rightEdge === false) {
+    this.rightEdge = true;
+    this.leftEdge = false;
+  }
+  if (this.rightEdge === true) {
+    this.left = this.left - 100;
+    this.setPosition(this.top, this.left);
+  }
+
   
   setTimeout(function() { that.step(); }, this.timeBetweenSteps);
 };
